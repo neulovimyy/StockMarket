@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head th:replace="fragments/head.html :: headFragment (title='Update Stock Market Values')">
+</head>
+<body>
+<div class="container" style="display: none">
+    <h3>Stock Form</h3>
+    <form id="stockForm" th:action="@{/stock/submitStock}" th:object="${stockMarketInfo}" method="post">
+        <div class="input-field hidden">
+            <input id="stockName" type="text" name="stockName" th:field="*{stockName}" required>
+            <label for="stockName">Stock Name</label>
+        </div>
+        <div class="input-field">
+            <input id="stockValue" type="text" name="stockValue" th:field="*{stockValue}" required>
+            <label for="stockValue">Stock Value</label>
+        </div>
+        <div class="input-field hidden">
+            <input id="stockSymbol" type="text" name="stockSymbol" th:field="*{stockSymbol}" required>
+            <label for="stockSymbol">Stock Symbol</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>
+
+<!-- Import Materialize JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>

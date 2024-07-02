@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<link th:href="@{/css/materialize.min.css}" rel="stylesheet"/>
+<head th:replace="fragments/head.html :: headFragment (title='Stock Market')">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+    <div class="col-md-6">
+    <table class="highlight responsive-table">
+        <thead>
+                <th>Full Name</th>
+                <th>Salary</th>
+                <th>Department</th>
+                <th>Job Title</th>
+        </thead>
+        <tbody>
+            <tr th:each="employees : ${employees}" >
+                <td>[[${employees.firstName + " "+ employees.lastName}]]</td>
+                <td>[[${employees.salary}]]</td>
+                <td>[[${employees.department}]]</td>
+                <td>[[${employees.jobTitle}]]</td>
+                <td><a th:href="@{/employees/{id}(id=${employees.employeeId})}">Edit</a></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+<!--    <div th:if="${employees.totalPages > 1}">-->
+<!--        <ul>-->
+<!--            <li th:class="${employees.first} ? 'disabled' : '' ">-->
+<!--                <a href="${'employees?page='+{employees.pageNumber-1} ">Previous </a>-->
+<!--            </li>-->
+<!--            <li th:class="${employees.last} ? 'disabled' : '' ">-->
+<!--                <a href="${'employees?page='+{employees.pageNumber+1} ">Next </a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+</div>
+    </div>
+</div>
+</body>
+</html>

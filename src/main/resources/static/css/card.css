@@ -1,0 +1,53 @@
+.card {
+position: relative;
+padding: 20px;
+background-color: #f9f9f9;
+border: 1px solid #ddd;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card .stock-value {
+font-size: 2em;
+font-weight: bold;
+color: #333;
+text-align: center;
+background-color: #d7e8ff; /* Light blue background */
+padding: 10px;
+border-radius: 5px;
+}
+
+.card .stock-name {
+font-size: 1em;
+color: #666;
+text-align: center;
+margin-top: 10px;
+}
+
+.card .read-more,
+.card .update-stock {
+display: block;
+text-align: center;
+margin-top: 10px;
+text-decoration: none;
+color: #ff9800; /* Orange color for the links */
+font-weight: bold;
+}
+
+.card .update-stock {
+background-color: #e0f7fa; /* Light cyan background for the button */
+padding: 10px;
+border-radius: 5px;
+color: #333;
+}
+
+.card .update-stock:hover {
+background-color: #b2ebf2; /* Darker cyan background on hover */
+}
+
+.card .entity-id {
+font-size: 0.8em;
+color: #333;
+text-align: center;
+margin-top: 10px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:replace="fragments/head.html :: headFragment (title='Stock Market Home')">
+</head>
+<body>
+<div th:replace="fragments/header.html :: header"></div>
+<div class="container">
+    <div class="row">
+        <div th:each="stocks : ${stockMarketList}" class="col s12 m2">
+            <div class="card" style="">
+                <div class="card-image center">
+                    <span class="card-content" th:text="${stocks.stockSymbol}"></span>
+                </div>
+                <div class="card-content center">
+                    <h4 class="blue lighten-3">[[${stocks.stockValue}]]</h4>
+                </div>
+                <div class="card-content card-image">
+                    <p th:if="${#strings.length(stocks.stockName) le 10}" th:text="${stocks.stockName}"></p>
+                    <p th:unless="${#strings.length(stocks.stockName) le 10}"
+                       th:text="${#strings.append(#strings.substring(stocks.stockName,0,10),'...')}"></p>
+                </div>
+                <div class="card-action">
+                    <a th:href="@{/stock/updateStockDetails/{id}(id=${stocks.stockSymbol})}">Read More</a>
+                </div>
+                <div class="card-action teal lighten-5" >
+                    <a th:href="@{/stock/updateStockValues/{id}(id=${stocks.stockSymbol})}">Update Stock</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="" th:each="stockForm : ${stockMarketList}">
+
+</div>
+</body>
+</html>
