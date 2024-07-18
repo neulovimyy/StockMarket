@@ -4,7 +4,7 @@
 FROM gradle:7.2.0-jdk11 AS build
 WORKDIR /app
 COPY . /app
-RUN gradle build --no-daemon
+RUN gradlew.bat build --no-daemon
 
 # Stage 2: Production Stage
 FROM eclipse-temurin:21-jdk-alpine
