@@ -6,7 +6,9 @@ plugins {
 
 group = 'com.gtormo'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+//sourceCompatibility = '17'
+
+
 
 java {
 	toolchain {
@@ -26,6 +28,7 @@ dependencies {
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation 'org.springframework.session:spring-session-core'
 	implementation 'org.springframework:spring-context:6.1.10'
+	implementation 'com.github.javafaker:javafaker:1.0.2'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework:spring-webflux'
